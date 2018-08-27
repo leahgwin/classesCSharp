@@ -6,10 +6,10 @@ namespace classes
     // this is the custom type for Employee. the employee has the following properties:
     public class Employee
     {
-        public string firstName { get; }
-        public string lastName { get; }
-        public string title { get; }
-        public DateTime startDate { get; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string title { get; set; }
+        public DateTime startDate { get; set; }
     }
 
     // this is the custom type for company. the company has the following properties:
@@ -31,13 +31,6 @@ namespace classes
             }
         }
 
-        /*
-            Create a constructor method that accepts two arguments:
-                1. The name of the company
-                2. The date it was created
-
-            The constructor will set the value of the public properties
-        */
     }
 
     class Program
@@ -53,7 +46,36 @@ namespace classes
 
             // Create three employees
 
+            Employee Leah = new Employee()
+            {
+                firstName = "Leah",
+                lastName = "Gwin",
+                startDate = DateTime.Now,
+                title = "Social Media Associate"
+            };
+
+            Employee Hanna = new Employee()
+            {
+                firstName = "Hanna",
+                lastName = "Cimperman",
+                startDate = DateTime.Now,
+                title = "Marketing Associate"
+            };
+
+            Employee Elise = new Employee()
+            {
+                firstName = "Elise",
+                lastName = "Kelly",
+                startDate = DateTime.Now,
+                title = "Social Media Specialist"
+            };
+
             // Assign the employees to the company
+            Lyft.currentEmployees.Add(Leah);
+            Lyft.currentEmployees.Add(Hanna);
+            Lyft.currentEmployees.Add(Elise);
+
+            Lyft.ListEmployees();
 
             /*
                 Iterate the company's employee list and generate the
